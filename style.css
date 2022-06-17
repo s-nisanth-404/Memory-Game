@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+}
+
+section {
+  display: grid;
+  position: relative;
+  height: 100%;
+  grid-template-columns: repeat(4, 8rem);
+  grid-template-rows: repeat(4, 6rem);
+  gap: 4rem;
+  perspective: 800px;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-size: 3rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 2s ease-out;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.face,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+}
+
+.face {
+  transform: rotateY(-180deg);
+}
+
+.back {
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  backface-visibility: hidden;
+}
+
+.toggleCard {
+  transform: rotateY(180deg);
+}
